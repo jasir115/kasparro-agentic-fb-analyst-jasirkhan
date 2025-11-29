@@ -10,16 +10,16 @@
 
 ## 🔥 Overview
 
-Kasparro is a **production-style agentic system** that analyzes Facebook Ads performance end-to-end:
+Kasparro is a **production-style agentic system** that analyzes Facebook Ads performance end-to-end. It:
 
-- 📌 Understands your question (ROAS drop, CTR dip, CPC spike, etc.)
-- 📊 Summarizes & inspects the dataset
-- 🧠 Generates data-backed hypotheses (via Gemini)
-- 🧪 Validates them using statistical signals (rule-based evaluator)
-- 🎨 Produces improved ad creatives (via Gemini + TF-IDF)
-- 📝 Exports clean JSON + Markdown business reports
+- 📌 Understands analytical queries (ROAS drop, CTR dip, CPC spike, etc.)
+- 📊 Summarizes and inspects large ad datasets
+- 🧠 Generates hypotheses using Gemini 2.0 Flash
+- 🧪 Validates them using statistical heuristics (CTR/ROAS/CPC trends)
+- 🎨 Generates improved ad creatives using TF-IDF + LLM
+- 📝 Outputs clean JSON + Markdown business reports
 
-All components are modular and fully traceable.
+All components are modular, traceable, and production-ready.
 
 ---
 
@@ -36,10 +36,11 @@ python -m venv .venv
 # Install dependencies
 pip install -r requirements.txt
 
-▶️ Run the Full Pipeline
+# Run the full pipeline
 python src/run.py "Analyze ROAS drop in last 7 days"
-
 📁 Project Structure
+bash
+Copy code
 kasparro-agentic-fb-analyst/
 │
 ├── README.md
@@ -80,9 +81,9 @@ kasparro-agentic-fb-analyst/
 │
 └── tests/
     └── test_evaluator.py
-
 ⚙️ Configuration
-Config file: config/config.yaml
+yaml
+Copy code
 project_name: "kasparro-agentic-fb-analyst"
 random_seed: 42
 min_confidence: 0.6
@@ -98,57 +99,58 @@ gemini:
 report_dir: "reports"
 logs_dir: "logs"
 top_k_terms: 10
+Set your API key:
 
+powershell
+Copy code
+$env:GEMINI_API_KEY="YOUR_KEY"
 📤 Outputs
-After running the pipeline, results appear in:
+File	Description
+reports/report.md	Executive summary for stakeholders
+reports/insights.json	Validated hypotheses
+reports/creatives.json	LLM-generated creative variants
 
-| File                     | Description                        |
-| ------------------------ | ---------------------------------- |
-| `reports/report.md`      | Executive summary for stakeholders |
-| `reports/insights.json`  | Validated hypotheses               |
-| `reports/creatives.json` | Generated creative ad variants     |
+Example output:
 
-Example creative output:
+json
+Copy code
 {
   "headline": "Seamless Comfort, All Day Long",
   "cta": "Shop Now",
   "reasoning": "Highlights comfort & wire-free design."
 }
-
 👀 Observability
-Full trace logs are automatically captured:
+bash
+Copy code
 logs/
  ├── run.log
  ├── insights.log
  └── creatives.log
-
 🚀 Release
+bash
+Copy code
 git tag v1.0
 git push origin v1.0
-# 📝 Self-Review (Design Choices & Tradeoffs)
+📝 Self-Review (Design Choices & Tradeoffs)
+✔ Multi-agent modular architecture
+✔ Stable fallback systems for LLM errors
+✔ Gemini 2.0 Flash for speed + structured JSON
+✔ Regex-backed JSON extraction for stability
+✔ Rule-based evaluator for deterministic scoring
+✔ Observability-first design using complete logging
+✔ TF-IDF + LLM creative generation
 
-### ✔ Multi-agent modular architecture  
-### ✔ Stable fallback systems (for LLM failures)  
-### ✔ Gemini 2.0 Flash chosen for speed + structure  
-### ✔ Regex-based JSON extraction  
-### ✔ Rule-based evaluator for deterministic scoring  
-### ✔ Observability-first design using logs  
-### ✔ Robust creative generation using TF-IDF + LLM  
+🔮 Limitations & Future Enhancements
+Add Pydantic for JSON schema validation
 
----
+Enable multi-pass self-refinement of hypotheses
 
-## 🔮 Limitations & Future Enhancements
+Add dashboards for ROAS/CTR visualization
 
-- Add Pydantic for JSON schema validation  
-- Enable multi-pass self-refinement of hypotheses  
-- Add dashboards for ROAS/CTR visualization  
-- Upgrade to Gemini 2.0 Pro for deeper insights  
-
----
+Upgrade to Gemini 2.0 Pro for deeper insights
 
 <div align="center">
+✨ Built for Kasparro Assignment
+📬 Need help running or improving this? Just ask!
 
-✨ **Built for Kasparro Assignment**  
-📬 Need help running or improving this? Just ask!  
-
-</div>
+</div> ```
