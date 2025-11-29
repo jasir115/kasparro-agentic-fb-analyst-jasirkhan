@@ -125,29 +125,30 @@ logs/
 🚀 Release
 git tag v1.0
 git push origin v1.0
+# 📝 Self-Review (Design Choices & Tradeoffs)
 
-📝 Self-Review (Design Choices & Tradeoffs)
-✔ Multi-agent modular architecture
-✔ Stable fallback systems (for LLM failures)
-✔ Gemini 2.0 Flash chosen for speed + structure
-✔ Regex-based JSON extraction
-✔ Rule-based evaluator for deterministic scoring
-✔ Observability-first design using logs
-✔ Robust creative generation using TF-IDF + LLM
+### ✔ Multi-agent modular architecture  
+### ✔ Stable fallback systems (for LLM failures)  
+### ✔ Gemini 2.0 Flash chosen for speed + structure  
+### ✔ Regex-based JSON extraction  
+### ✔ Rule-based evaluator for deterministic scoring  
+### ✔ Observability-first design using logs  
+### ✔ Robust creative generation using TF-IDF + LLM  
 
-Limitations & Future Enhancements
+---
 
-Add Pydantic for JSON schema validation
+## 🔮 Limitations & Future Enhancements
 
-Enable multi-pass self-refinement of hypotheses
+- Add Pydantic for JSON schema validation  
+- Enable multi-pass self-refinement of hypotheses  
+- Add dashboards for ROAS/CTR visualization  
+- Upgrade to Gemini 2.0 Pro for deeper insights  
 
-Add dashboards for ROAS/CTR visualization
-
-Upgrade to Gemini 2.0 Pro for deeper insights
+---
 
 <div align="center">
 
-✨ Built for Kasparro Assignment
-📬 Need help running or improving this? Just ask!
+✨ **Built for Kasparro Assignment**  
+📬 Need help running or improving this? Just ask!  
 
-</div> ```
+</div>
