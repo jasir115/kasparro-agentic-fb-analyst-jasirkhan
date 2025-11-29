@@ -1,0 +1,49 @@
+[
+  {
+    "id": "H1",
+    "text": "Increased spend without a proportional increase in conversions could be diluting ROAS. This could be due to inefficient bidding or saturation of the target audience.",
+    "confidence": 0.7,
+    "suggested_checks": [
+      "spend_by_campaign",
+      "purchases_by_campaign",
+      "roas_by_campaign",
+      "impressions_by_campaign"
+    ],
+    "evidence": {}
+  },
+  {
+    "id": "H2",
+    "text": "A change in creative performance (lower CTR or conversion rate) could be driving down ROAS. This could be due to ad fatigue or a less engaging message.",
+    "confidence": 0.6,
+    "suggested_checks": [
+      "ctr_by_creative_type",
+      "purchases_by_creative_type",
+      "roas_by_creative_type",
+      "clicks_by_creative_message"
+    ],
+    "evidence": {}
+  },
+  {
+    "id": "H3",
+    "text": "A shift in audience targeting or platform allocation could be impacting ROAS. Perhaps a less responsive audience is now being targeted, or spend has been shifted to a less efficient platform.",
+    "confidence": 0.5,
+    "suggested_checks": [
+      "roas_by_audience_type",
+      "spend_by_platform",
+      "roas_by_platform",
+      "purchases_by_country"
+    ],
+    "evidence": {}
+  },
+  {
+    "id": "H4",
+    "text": "External factors, such as increased competition or seasonality, could be affecting overall performance and reducing ROAS.",
+    "confidence": 0.4,
+    "suggested_checks": [
+      "roas_by_date",
+      "spend_by_date",
+      "purchases_by_date"
+    ],
+    "evidence": {}
+  }
+]

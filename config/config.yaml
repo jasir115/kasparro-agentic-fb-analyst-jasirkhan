@@ -1,0 +1,14 @@
+project_name: "kasparro-agentic-fb-analyst"
+random_seed: 42
+data_csv: "data/synthetic_fb_ads_undergarments.csv"
+date_col: "date"
+min_confidence: 0.6
+
+gemini:
+  model: "gemini-2.0-flash"  # free, fast, perfect for this project
+  temperature: 0.0
+  max_tokens: 800
+
+report_dir: "reports"
+logs_dir: "logs"
+top_k_terms: 10

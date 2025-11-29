@@ -1,0 +1,29 @@
+[
+  {
+    "hypothesis_id": "H2",
+    "campaign_id": "campaign_unknown",
+    "variants": [
+      {
+        "variant_id": "v1",
+        "headline": "Seamless Comfort, All Day Long",
+        "body": "Discover bras and briefs designed for ultimate comfort and confidence. Free yourself from wires and embrace the feeling of seamless support. Shop our collection for women and men today!",
+        "cta": "Shop Now",
+        "reasoning": "Focuses on comfort and freedom from wires, addressing a potential pain point. Uses 'seamless' and 'comfort' prominently. Targets both women and men."
+      },
+      {
+        "variant_id": "v2",
+        "headline": "Confidence Starts From Within: Find Your Perfect Fit",
+        "body": "Bras and briefs that empower you. Experience the difference of a perfectly fitting bra and comfortable briefs. Designed for women and men who value comfort and confidence, all day, every day.",
+        "cta": "Find Your Fit",
+        "reasoning": "Emphasizes confidence and finding the right fit. Uses 'confidence' and 'comfort' and targets both genders. The CTA encourages engagement beyond just shopping."
+      },
+      {
+        "variant_id": "v3",
+        "headline": "Free Yourself: Wire-Free Bras & Comfortable Briefs",
+        "body": "Experience the ultimate in comfort with our wire-free bras and seamless briefs. Designed for women and men, our collection offers all-day support and confidence. Shop now and enjoy free shipping!",
+        "cta": "Shop Free Shipping",
+        "reasoning": "Highlights the 'free' aspect (wire-free and free shipping) and focuses on the benefits of wire-free bras and seamless briefs. Includes a shipping incentive. Targets both women and men."
+      }
+    ]
+  }
+]
