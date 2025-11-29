@@ -9,148 +9,82 @@
 </div>
 
 ## 🔥 Overview
+Kasparro is a production-style agentic system that analyzes Facebook Ads performance end-to-end. It understands analytical queries (ROAS drop, CTR dip, CPC spike), summarizes and inspects your dataset, generates hypotheses via Gemini 2.0 Flash, validates them using rule-based statistical evaluation, generates improved ad creatives using TF-IDF + LLM, and exports insights and creatives as clean JSON + Markdown reports. Every component is modular, traceable, and production-ready.
 
-Kasparro is a **production-style agentic system** that analyzes Facebook Ads performance end-to-end. It:
-
-- 📌 Understands analytical queries (ROAS drop, CTR dip, CPC spike, etc.)
-- 📊 Summarizes and inspects large ad datasets
-- 🧠 Generates hypotheses using Gemini 2.0 Flash
-- 🧪 Validates them using statistical heuristics (CTR/ROAS/CPC trends)
-- 🎨 Generates improved ad creatives using TF-IDF + LLM
-- 📝 Outputs clean JSON + Markdown business reports
-
-All components are modular, traceable, and production-ready.
-
----
-
-# 🛠 Quick Start
-
-```bash
-python -V  # should be >= 3.10
-
-# Create & activate virtual environment
-python -m venv .venv
-.venv\Scripts\activate    # Windows
-# source .venv/bin/activate  # Mac/Linux
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the full pipeline
+## 🛠 Quick Start
+python -V  # should be >= 3.10  
+python -m venv .venv  
+.venv\Scripts\activate    # Windows  
+pip install -r requirements.txt  
 python src/run.py "Analyze ROAS drop in last 7 days"
-📁 Project Structure
-bash
-Copy code
-kasparro-agentic-fb-analyst/
-│
-├── README.md
-├── requirements.txt
-├── Makefile
-│
-├── config/
-│   └── config.yaml
-│
-├── data/
-│   ├── synthetic_fb_ads_undergarments.csv
-│   └── sample_fb_ads.csv
-│
-├── prompts/
-│   ├── planner_prompt.md
-│   ├── insight_prompt.md
-│   ├── creative_prompt.md
-│   └── eval_prompt.md
-│
-├── src/
-│   ├── run.py
-│   └── agents/
-│       ├── planner.py
-│       ├── data_agent.py
-│       ├── insight_agent.py
-│       ├── evaluator.py
-│       └── creative_generator.py
-│
-├── reports/
-│   ├── report.md
-│   ├── insights.json
-│   └── creatives.json
-│
-├── logs/
-│   ├── run.log
-│   ├── insights.log
-│   └── creatives.log
-│
-└── tests/
-    └── test_evaluator.py
-⚙️ Configuration
-yaml
-Copy code
-project_name: "kasparro-agentic-fb-analyst"
-random_seed: 42
-min_confidence: 0.6
 
-data_csv: "data/synthetic_fb_ads_undergarments.csv"
-date_col: "date"
+## 📁 Project Structure
+kasparro-agentic-fb-analyst/  
+├── README.md  
+├── requirements.txt  
+├── Makefile  
+├── config/config.yaml  
+├── data/synthetic_fb_ads_undergarments.csv  
+├── prompts/*.md  
+├── src/run.py  
+├── src/agents/ (planner, data_agent, insight_agent, evaluator, creative_generator)  
+├── reports/ (report.md, insights.json, creatives.json)  
+├── logs/ (run.log, insights.log, creatives.log)  
+└── tests/test_evaluator.py  
 
-gemini:
-  model: "gemini-2.0-flash"
-  temperature: 0.0
-  max_tokens: 800
+## ⚙️ Config (config/config.yaml)
+project_name: kasparro-agentic-fb-analyst  
+random_seed: 42  
+min_confidence: 0.6  
+data_csv: data/synthetic_fb_ads_undergarments.csv  
+date_col: date  
+gemini_model: gemini-2.0-flash  
+temperature: 0.0  
+max_tokens: 800  
+report_dir: reports  
+logs_dir: logs  
+top_k_terms: 10  
 
-report_dir: "reports"
-logs_dir: "logs"
-top_k_terms: 10
-Set your API key:
-
-powershell
-Copy code
+Set API key:  
 $env:GEMINI_API_KEY="YOUR_KEY"
-📤 Outputs
-File	Description
-reports/report.md	Executive summary for stakeholders
-reports/insights.json	Validated hypotheses
-reports/creatives.json	LLM-generated creative variants
 
-Example output:
+## 📤 Outputs
+reports/report.md — Executive summary  
+reports/insights.json — Validated hypotheses  
+reports/creatives.json — Creative variants  
 
-json
-Copy code
-{
-  "headline": "Seamless Comfort, All Day Long",
-  "cta": "Shop Now",
-  "reasoning": "Highlights comfort & wire-free design."
-}
-👀 Observability
-bash
-Copy code
-logs/
- ├── run.log
- ├── insights.log
- └── creatives.log
-🚀 Release
-bash
-Copy code
-git tag v1.0
+Example creative output (displayed as plain text here):  
+headline: Seamless Comfort, All Day Long  
+cta: Shop Now  
+reasoning: Highlights comfort & wire-free design.  
+
+## 👀 Observability
+logs/run.log  
+logs/insights.log  
+logs/creatives.log  
+
+## 🚀 Release
+git tag v1.0  
 git push origin v1.0
-📝 Self-Review (Design Choices & Tradeoffs)
-✔ Multi-agent modular architecture
-✔ Stable fallback systems for LLM errors
-✔ Gemini 2.0 Flash for speed + structured JSON
-✔ Regex-backed JSON extraction for stability
-✔ Rule-based evaluator for deterministic scoring
-✔ Observability-first design using complete logging
-✔ TF-IDF + LLM creative generation
 
-🔮 Limitations & Future Enhancements
-Add Pydantic for JSON schema validation
+## 📝 Self-Review (Design Choices & Tradeoffs)
+✔ Multi-agent modular architecture  
+✔ Stable fallback systems for LLM errors  
+✔ Gemini 2.0 Flash for speed + structured output  
+✔ Regex-backed JSON extraction  
+✔ Rule-based deterministic evaluator  
+✔ Complete logging for observability  
+✔ Creative generation using TF-IDF + LLM  
 
-Enable multi-pass self-refinement of hypotheses
-
-Add dashboards for ROAS/CTR visualization
-
-Upgrade to Gemini 2.0 Pro for deeper insights
+## 🔮 Limitations & Future Enhancements
+- Add Pydantic schema validation  
+- Add dashboards for ROAS and CTR visualization  
+- Multi-pass reasoning for better hypothesis refinement  
+- Upgrade to Gemini 2.0 Pro for deeper insight quality  
 
 <div align="center">
-✨ Built for Kasparro Assignment
-📬 Need help running or improving this? Just ask!
 
-</div> ```
+✨ Built for Kasparro Assignment  
+📬 Need help running or improving this? Just ask!  
+
+</div>
